@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public abstract class Conta implements ITaxas {
 
@@ -78,10 +79,23 @@ public abstract class Conta implements ITaxas {
         return this.getNumero() == comp.getNumero();
     }
 
-    void extrato() {
+    void extrato(int ordem) {
+        ArrayList<Operacao> operacoes = new ArrayList<Operacao>(this.operacoes);
+        switch (ordem) {
+            case 0:
+                break;
+            case 1:
+                Collections.sort(operacoes);
+                break;
+            default:
+                System.out.println("Erro. Digite 0 para ordenação por data e 1 para por tipo");
+                return;
+        }
+
         for (Operacao operacao : operacoes) {
             System.out.print(operacao.toString());
         }
+
     }
 
     public int getNumero() {

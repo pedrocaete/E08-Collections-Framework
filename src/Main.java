@@ -16,28 +16,20 @@ public class Main {
         contapj.sacar(10);
         contapj.sacar(1);
         contapj.sacar(900);
-        contapj.imprimirExtratoTaxas();
 
-        System.out.println("ContaPF");
-        contapf.depositar(10000);
-        contapf.sacar(10);
-        contapf.sacar(1);
-        contapf.sacar(900);
-        contapf.imprimirExtratoTaxas();
-
-        System.out.println("Conta Poupança");
-        contapoup.depositar(10000);
-        contapoup.sacar(10);
-        contapoup.sacar(1);
-        contapoup.sacar(900);
-        contapoup.imprimirExtratoTaxas();
-
-        System.out.println("Conta Universitária");
-        contauni.depositar(10000);
-        contauni.sacar(10);
-        contauni.sacar(1);
-        contauni.sacar(900);
-        contauni.imprimirExtratoTaxas();
+        try {
+            Thread.sleep(5000); // pausa de 5 segundos
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        contapj.depositar(20);
+        contapj.sacar(20);
+        System.out.println("Ordenado por tipo de operação");
+        contapj.extrato(1);
+        System.out.println("Ordenado por data");
+        contapj.extrato(0);
+        System.out.println("Exemplo de caso de flag inválido");
+        contapj.extrato(10);
 
     }
 }
