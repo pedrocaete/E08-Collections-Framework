@@ -6,11 +6,7 @@ public class OperacaoSaque extends Operacao {
 
     @Override
     public String toString() {
-        String s;
-        s = (this.getData() + "  ");
-        s += ("s  ");
-        s += (this.getValor() + "\n");
-        return s;
+        return this.getData() + "  " + "s  " + this.getValor() + "\n";
     }
 
     @Override

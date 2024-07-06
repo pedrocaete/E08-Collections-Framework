@@ -65,21 +65,21 @@ public abstract class Conta implements ITaxas {
         }
     }
 
+    @Override
     public String toString() {
-        String s;
-        s = ("Número: " + this.getNumero() + "\n");
-        s += ("Dono: " + this.dono.getNome() + "\n");
-        s += ("Saldo: " + this.getSaldo() + "\n");
-        s += ("Limite: " + this.getLimite() + "\n");
-        return s;
+        return "Número: " + this.getNumero() + "\n" +
+                "Dono: " + this.dono.getNome() + "\n" +
+                "Saldo: " + this.getSaldo() + "\n" +
+                "Limite: " + this.getLimite() + "\n";
     }
 
+    @Override
     public boolean equals(Object conta) {
         Conta comp = (Conta) conta;
         return this.getNumero() == comp.getNumero();
     }
 
-    void extrato(int ordem) {
+    void imprimirExtrato(int ordem) {
         ArrayList<Operacao> operacoes = new ArrayList<Operacao>(this.operacoes);
         switch (ordem) {
             case 0:

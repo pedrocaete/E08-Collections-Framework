@@ -11,25 +11,25 @@ public class PessoaFisica extends Cliente {
         this.sexo = sexo;
     }
 
+    @Override
     public String toString() {
-        String s;
-        s = ("CPF: " + this.cpf + "\n");
-        s += ("Nome: " + this.getNome() + "\n");
-        s += ("Endereço: " + this.getEndereco() + "\n");
-        s += ("Idade: " + this.idade + "\n");
-        s += ("Sexo: " + this.sexo + "\n");
-        s += ("Data de criação: " + this.getData() + "\n");
-        return s;
+        return "CPF: " + this.cpf + "\n" +
+                "Nome: " + this.getNome() + "\n" +
+                "Endereço: " + this.getEndereco() + "\n" +
+                "Idade: " + this.idade + "\n" +
+                "Sexo: " + this.sexo + "\n" +
+                "Data de criação: " + this.getData() + "\n";
     }
 
+    @Override
     public boolean equals(Object pf) {
         PessoaFisica comp = (PessoaFisica) pf;
-        return this.getCpf() == comp.getCpf();
+        return this.getCpf().equals(comp.getCpf());
     }
 
     @Override
     public boolean autenticar(String chave) {
-        return chave == this.cpf;
+        return chave.equals(this.cpf);
     }
 
     public String getCpf() {

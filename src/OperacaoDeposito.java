@@ -6,11 +6,9 @@ public class OperacaoDeposito extends Operacao {
 
     @Override
     public String toString() {
-        String s;
-        s = (this.getData() + "  ");
-        s += ("d  ");
-        s += (this.getValor() + "\n");
-        return s;
+        return this.getData() + "  " +
+                "d  " +
+                this.getValor() + "\n";
     }
 
     @Override

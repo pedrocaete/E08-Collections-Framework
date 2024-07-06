@@ -11,25 +11,25 @@ public class PessoaJuridica extends Cliente {
         this.setor = setor;
     }
 
+    @Override
     public String toString() {
-        String s;
-        s = ("CNPJ: " + this.cnpj + "\n");
-        s += ("Nome: " + this.getNome() + "\n");
-        s += ("Endereço: " + this.getEndereco() + "\n");
-        s += ("Número de funcionários: " + this.numFuncionarios + "\n");
-        s += ("Setor: " + this.setor + "\n");
-        s += ("Data de criação: " + this.getData() + "\n");
-        return s;
+        return "CNPJ: " + this.cnpj + "\n" +
+                "Nome: " + this.getNome() + "\n" +
+                "Endereço: " + this.getEndereco() + "\n" +
+                "Número de funcionários: " + this.numFuncionarios + "\n" +
+                "Setor: " + this.setor + "\n" +
+                "Data de criação: " + this.getData() + "\n";
     }
 
+    @Override
     public boolean equals(Object pj) {
         PessoaJuridica comp = (PessoaJuridica) pj;
-        return this.getCnpj() == comp.getCnpj();
+        return this.getCnpj().equals(comp.getCnpj());
     }
 
     @Override
     public boolean autenticar(String chave) {
-        return chave == this.cnpj;
+        return chave.equals(this.cnpj);
     }
 
     String getCnpj() {

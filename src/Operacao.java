@@ -18,12 +18,9 @@ public abstract class Operacao implements ITaxas, Comparable<Operacao> {
         data = new Date();
     }
 
+    @Override
     public String toString() {
-        String s;
-        s = (this.getData() + "  ");
-        s += (this.getTipo() + "  ");
-        s += (this.getValor() + "\n");
-        return s;
+        return this.getData() + "  " + this.getTipo() + "  " + this.getValor() + "\n";
     }
 
     @Override

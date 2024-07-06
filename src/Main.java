@@ -25,11 +25,11 @@ public class Main {
         contapj.depositar(20);
         contapj.sacar(20);
         System.out.println("Ordenado por tipo de operação");
-        contapj.extrato(1);
+        contapj.imprimirExtrato(1);
         System.out.println("Ordenado por data");
-        contapj.extrato(0);
+        contapj.imprimirExtrato(0);
         System.out.println("Exemplo de caso de flag inválido");
-        contapj.extrato(10);
+        contapj.imprimirExtrato(10);
 
     }
 }
